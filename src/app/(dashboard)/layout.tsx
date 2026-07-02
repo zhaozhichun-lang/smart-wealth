@@ -90,8 +90,20 @@ export default function DashboardLayout({
         <main className="flex flex-1 flex-col min-w-0 overflow-auto">
           <SidebarTrigger />
           {isGuest && (
-            <div className="bg-primary/10 border-b border-primary/20 px-4 py-2 text-center text-sm text-muted-foreground">
-              🏷️ 您正在以游客身份浏览演示数据
+            <div className="bg-primary/10 border-b border-primary/20 px-4 py-2 text-center text-sm text-muted-foreground flex items-center justify-center gap-2">
+              <span>🏷️ 您正在以游客身份浏览演示数据</span>
+              <a
+                href="/login"
+                className="underline underline-offset-2 hover:text-foreground transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  localStorage.removeItem("token");
+                  localStorage.removeItem("loginInfo");
+                  window.location.href = "/login";
+                }}
+              >
+                登录真实账号
+              </a>
             </div>
           )}
           {children}

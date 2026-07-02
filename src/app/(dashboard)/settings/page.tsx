@@ -41,7 +41,7 @@ export default function Settings() {
     localStorage.removeItem("token");
     localStorage.removeItem("loginInfo");
     toast.success(isGuest ? "已退出演示" : "已退出登录");
-    window.location.href = "/";
+    window.location.href = "/login";
   };
 
   const handleClearCache = () => {

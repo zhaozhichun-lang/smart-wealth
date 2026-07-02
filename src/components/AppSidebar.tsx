@@ -219,13 +219,36 @@ export function AppSidebar() {
                 side="top"
                 className="w-(--radix-dropdown-menu-trigger-width)"
               >
-                {!isGuest && (
+                {isGuest ? (
                   <DropdownMenuItem
-                    onClick={() => (window.location.href = "/profile")}
+                    onClick={() => {
+                      localStorage.removeItem("token");
+                      localStorage.removeItem("loginInfo");
+                      window.location.href = "/login";
+                    }}
                   >
-                    <User className="mr-2 size-4" />
-                    <span>个人资料</span>
+                    <LogOut className="mr-2 size-4" />
+                    <span>登录真实账号</span>
                   </DropdownMenuItem>
+                ) : (
+                  <>
+                    <DropdownMenuItem
+                      onClick={() => (window.location.href = "/profile")}
+                    >
+                      <User className="mr-2 size-4" />
+                      <span>个人资料</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      onClick={() => {
+                        localStorage.removeItem("token");
+                        localStorage.removeItem("loginInfo");
+                        window.location.href = "/login";
+                      }}
+                    >
+                      <LogOut className="mr-2 size-4" />
+                      <span>切换账号</span>
+                    </DropdownMenuItem>
+                  </>
                 )}
                 <DropdownMenuItem
                   onClick={() =>

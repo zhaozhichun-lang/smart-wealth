@@ -99,7 +99,7 @@ export function SignupForm() {
       setTimeout(() => {
         setError("");
         setSuccess("");
-        router.replace("/login");
+        router.replace("/");
       }, 1000);
     } catch (err: any) {
       setError(err.message || "注册失败，请稍后重试");
