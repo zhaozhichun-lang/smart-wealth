@@ -1,0 +1,12 @@
+{
+  "id": "9bd3b9e5-cf39-44cd-baca-13387dab86cd",
+  "repo": {
+    "provider": "github",
+    "repo": "zhaozhichun-lang/smart-wealth",
+    "private": false,
+    "branch": "main",
+    "cmd": "npm run build",
+    "dir": ".",
+    "allowed_branches": ["main"]
+  }
+}
