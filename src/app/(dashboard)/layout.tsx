@@ -94,7 +94,7 @@ export default function DashboardLayout({
               <span>🏷️ 您正在以游客身份浏览演示数据</span>
               <button
                 type="button"
-                className="underline underline-offset-2 hover:text-foreground transition-colors cursor-pointer"
+                className="inline-flex items-center rounded-md bg-primary px-3 py-1 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors cursor-pointer"
                 onClick={() => {
                   localStorage.removeItem("token");
                   localStorage.removeItem("loginInfo");
